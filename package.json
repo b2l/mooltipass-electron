@@ -4,7 +4,10 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "standard",
+    "build": "webpack -p",
+    "dev": "webpack --colors --watch"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +20,18 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.4.1"
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-react-jsx": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "electron": "^1.4.15",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "preact": "^7.2.0",
+    "standard": "^8.6.0"
   }
 }
