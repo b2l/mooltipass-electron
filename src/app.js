@@ -1,8 +1,7 @@
 import preact from 'preact'
+import MooltipassApp from './components/MooltipassApp'
 
 preact.render((
-  <div>
-    <h1>The mooltipass</h1>
-  </div>
+  <MooltipassApp />
 ), document.getElementById('app'))
 

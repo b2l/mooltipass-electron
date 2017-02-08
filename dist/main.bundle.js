@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -562,20 +562,851 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MooltipassMenu__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Settings__ = __webpack_require__(4);
+
+
+
+
+__webpack_require__(9);
+
+class MooltipassApp extends __WEBPACK_IMPORTED_MODULE_0_preact___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: __WEBPACK_IMPORTED_MODULE_2__Settings__["a" /* default */]
+    };
+  }
+
+  navigateTo(page) {
+    this.setState({ page });
+  }
+
+  render(props, state) {
+    const Page = state.page;
+    return __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'div',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(__WEBPACK_IMPORTED_MODULE_1__MooltipassMenu__["a" /* default */], {
+        activeMenu: state.page.name,
+        navigateTo: this.navigateTo.bind(this)
+      }),
+      __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(Page, null)
+    );
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = MooltipassApp;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_MooltipassApp__ = __webpack_require__(1);
 
 
-__WEBPACK_IMPORTED_MODULE_0_preact___default.a.render(__WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
-  'div',
-  null,
-  __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
-    'h1',
+
+__WEBPACK_IMPORTED_MODULE_0_preact___default.a.render(__WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(__WEBPACK_IMPORTED_MODULE_1__components_MooltipassApp__["a" /* default */], null), document.getElementById('app'));
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Settings__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Credentials__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Synchronization__ = __webpack_require__(6);
+/* harmony export (immutable) */ __webpack_exports__["a"] = MooltipassMenu;
+
+
+
+
+
+function MooltipassMenu({ activeMenu, navigateTo }) {
+  return __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+    'nav',
+    { className: 'menu' },
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'a',
+      {
+        className: `menu-item ${activeMenu === 'Settings' ? 'active' : ''}`,
+        onClick: () => navigateTo(__WEBPACK_IMPORTED_MODULE_1__Settings__["a" /* default */])
+      },
+      'Settings'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'a',
+      {
+        className: `menu-item ${activeMenu === 'Credentials' ? 'active' : ''}`,
+        onClick: () => navigateTo(__WEBPACK_IMPORTED_MODULE_2__Credentials__["a" /* default */])
+      },
+      'Credentials'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'a',
+      {
+        className: `menu-item ${activeMenu === 'Synchronization' ? 'active' : ''}`,
+        onClick: () => navigateTo(__WEBPACK_IMPORTED_MODULE_3__Synchronization__["a" /* default */])
+      },
+      'Synchronization'
+    )
+  );
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony export (immutable) */ __webpack_exports__["a"] = Settings;
+
+
+function Settings(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+    'div',
     null,
-    'The mooltipass'
-  )
-), document.getElementById('app'));
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'h1',
+      null,
+      'Device settings - Firmware v1.2_mini'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'form',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+        'section',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+          'h2',
+          { className: 'section-label' },
+          'Keyboard Output'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+          'div',
+          { className: 'section-content' },
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'keyboard' },
+              'Configured keyboard layout',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'keyboard', id: 'keyboard' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'en_US' },
+                  'en_US'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'en_GB' },
+                  'en_GB'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'fr_FR' },
+                  'fr_fr'
+                )
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'slow_computer' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'slow_computer' }),
+              'For slow computers: wait',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'slow_time', id: 'slow_time' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '5' },
+                  '5'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '10' },
+                  '10'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '15' },
+                  '15'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '30' },
+                  '30'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '100' },
+                  '100'
+                )
+              ),
+              'ms after each key press'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'after_login_ouptut' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'after_login_ouptut' }),
+              'Send',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'after_login_ouput_key', id: 'after_login_output_key' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { defaultSelected: true, value: 'Tab' },
+                  'Tab'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'Enter' },
+                  'Enter'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'Space' },
+                  'Space'
+                )
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'after_password_ouptut' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'after_password_ouptut' }),
+              'Send',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'after_password_ouput_key', id: 'after_password_output_key' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'Tab' },
+                  'Tab'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { defaultSelected: true, value: 'Enter' },
+                  'Enter'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'Space' },
+                  'Space'
+                )
+              )
+            )
+          )
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+        'section',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+          'h2',
+          { className: 'section-label' },
+          'Inactivity'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+          'div',
+          { className: 'section-content' },
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'cancel_after' },
+              'Cancel credentials request after',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'cancel_after', id: 'cancel_after' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '5' },
+                  '5'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '10' },
+                  '10'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '15' },
+                  '15'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '30' },
+                  '30'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '100' },
+                  '100'
+                )
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'lock_after' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'lock_after' }),
+              'Lock after',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'text', name: 'lock_after_time', id: 'lock_after_time' }),
+              'minutes inactivity'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'screensaver' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'screensaver' }),
+              'Use screen saver'
+            )
+          )
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+        'section',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+          'h2',
+          { className: 'section-label' },
+          'Miscellaneous'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+          'div',
+          { className: 'section-content' },
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'brightness' },
+              'Configure screen brightness',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'brightness', id: 'brightness' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '20' },
+                  '20'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '35' },
+                  '35'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '50' },
+                  '50'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '65' },
+                  '65'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '80' },
+                  '80'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: '100' },
+                  '100'
+                )
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'knock_feature' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'knock_feature' }),
+              'Enable knock detecting feature with',
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                'select',
+                { name: 'knock_feature_sensitivity', id: 'knock_feature_sensitivity' },
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'low' },
+                  'low'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'medium' },
+                  'medium'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+                  'option',
+                  { value: 'high' },
+                  'high'
+                )
+              ),
+              'sensitivity'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'no_host_boot' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'no_host_boot' }),
+              'Allow boot without host (e.g. usb battery / charger)'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'flash_screen' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'flash_screen' }),
+              'Flash screen when input is required'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+            'div',
+            { className: 'form-group checkbox' },
+            __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+              'label',
+              { htmlFor: 'tutorial' },
+              __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h('input', { type: 'checkbox', id: 'tutorial' }),
+              'Enable device tutorial'
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony export (immutable) */ __webpack_exports__["a"] = Credentials;
+
+
+function Credentials(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'h1',
+      null,
+      'Credentials'
+    )
+  );
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony export (immutable) */ __webpack_exports__["a"] = Synchronization;
+
+
+function Synchronization(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_preact___default.a.h(
+      'h1',
+      null,
+      'Synchronization'
+    )
+  );
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(10)();
+// imports
+
+
+// module
+exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n.menu {\n  width: 100%; }\n\n.menu-item {\n  display: inline-block;\n  text-align: center;\n  padding: 10px 0 10px;\n  width: 32%;\n  box-sizing: border-box;\n  cursor: pointer; }\n  .menu-item.active {\n    border-bottom: 2px solid #cecece;\n    cursor: initial; }\n\n.form-group {\n  margin-bottom: 5px;\n  position: relative; }\n\n.form-group label input[type=text],\n.form-group label select {\n  margin-left: 5px;\n  margin-right: 5px; }\n\nlabel {\n  height: 34px;\n  display: inline-block;\n  line-height: 1.42;\n  font-size: 14px;\n  color: #555; }\n\ninput[type=text],\nselect {\n  border: 1px solid #cecece;\n  border-radius: 0;\n  box-shadow: none;\n  height: 34px;\n  display: inline-block;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42;\n  color: #555;\n  background: white; }\n\n.form-group.checkbox label {\n  padding-left: 20px; }\n  .form-group.checkbox label input[type=checkbox] {\n    margin-top: 10px;\n    margin-left: -20px;\n    position: absolute; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+var stylesInDom = {},
+	memoize = function(fn) {
+		var memo;
+		return function () {
+			if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+			return memo;
+		};
+	},
+	isOldIE = memoize(function() {
+		return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+	}),
+	getHeadElement = memoize(function () {
+		return document.head || document.getElementsByTagName("head")[0];
+	}),
+	singletonElement = null,
+	singletonCounter = 0,
+	styleElementsInsertedAtTop = [];
+
+module.exports = function(list, options) {
+	if(typeof DEBUG !== "undefined" && DEBUG) {
+		if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the bottom of <head>.
+	if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+	var styles = listToStyles(list);
+	addStylesToDom(styles, options);
+
+	return function update(newList) {
+		var mayRemove = [];
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+		if(newList) {
+			var newStyles = listToStyles(newList);
+			addStylesToDom(newStyles, options);
+		}
+		for(var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+			if(domStyle.refs === 0) {
+				for(var j = 0; j < domStyle.parts.length; j++)
+					domStyle.parts[j]();
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+}
+
+function addStylesToDom(styles, options) {
+	for(var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+		if(domStyle) {
+			domStyle.refs++;
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles(list) {
+	var styles = [];
+	var newStyles = {};
+	for(var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+		if(!newStyles[id])
+			styles.push(newStyles[id] = {id: id, parts: [part]});
+		else
+			newStyles[id].parts.push(part);
+	}
+	return styles;
+}
+
+function insertStyleElement(options, styleElement) {
+	var head = getHeadElement();
+	var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+	if (options.insertAt === "top") {
+		if(!lastStyleElementInsertedAtTop) {
+			head.insertBefore(styleElement, head.firstChild);
+		} else if(lastStyleElementInsertedAtTop.nextSibling) {
+			head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			head.appendChild(styleElement);
+		}
+		styleElementsInsertedAtTop.push(styleElement);
+	} else if (options.insertAt === "bottom") {
+		head.appendChild(styleElement);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement(styleElement) {
+	styleElement.parentNode.removeChild(styleElement);
+	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+	if(idx >= 0) {
+		styleElementsInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement(options) {
+	var styleElement = document.createElement("style");
+	styleElement.type = "text/css";
+	insertStyleElement(options, styleElement);
+	return styleElement;
+}
+
+function createLinkElement(options) {
+	var linkElement = document.createElement("link");
+	linkElement.rel = "stylesheet";
+	insertStyleElement(options, linkElement);
+	return linkElement;
+}
+
+function addStyle(obj, options) {
+	var styleElement, update, remove;
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+		styleElement = singletonElement || (singletonElement = createStyleElement(options));
+		update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+	} else if(obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function") {
+		styleElement = createLinkElement(options);
+		update = updateLink.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+			if(styleElement.href)
+				URL.revokeObjectURL(styleElement.href);
+		};
+	} else {
+		styleElement = createStyleElement(options);
+		update = applyToTag.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle(newObj) {
+		if(newObj) {
+			if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+				return;
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag(styleElement, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = styleElement.childNodes;
+		if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+		if (childNodes.length) {
+			styleElement.insertBefore(cssNode, childNodes[index]);
+		} else {
+			styleElement.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag(styleElement, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		styleElement.setAttribute("media", media)
+	}
+
+	if(styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = css;
+	} else {
+		while(styleElement.firstChild) {
+			styleElement.removeChild(styleElement.firstChild);
+		}
+		styleElement.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink(linkElement, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	if(sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = linkElement.href;
+
+	linkElement.href = URL.createObjectURL(blob);
+
+	if(oldSrc)
+		URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(7);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(8)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/sass-loader/lib/loader.js!./app.scss", function() {
+			var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/sass-loader/lib/loader.js!./app.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function() {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		var result = [];
+		for(var i = 0; i < this.length; i++) {
+			var item = this[i];
+			if(item[2]) {
+				result.push("@media " + item[2] + "{" + item[1] + "}");
+			} else {
+				result.push(item[1]);
+			}
+		}
+		return result.join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu-item {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0 10px;
+  width: 32%;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 2px solid #cecece;
+    cursor: initial;
+  }
+}
+
+.form-group {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.form-group label input[type=text],
+.form-group label select {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+label {
+  height: 34px;
+  display: inline-block;
+  line-height: 1.42;
+  font-size: 14px;
+  color: #555;
+}
+
+input[type=text],
+select {
+  border: 1px solid #cecece;
+  border-radius: 0;
+  box-shadow: none;
+  height: 34px;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42;
+  color: #555;
+  background: white;
+}
+
+.form-group.checkbox {
+  label {
+    padding-left: 20px;
+
+    input[type=checkbox] {
+      margin-top: 10px;
+      margin-left: -20px;
+      position: absolute;
+    }
+  }
+}
